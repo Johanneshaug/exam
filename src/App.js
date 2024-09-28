@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleRestart} className="logo">eXam</button>
+      <button onClick={handleRestart} className="logo" >eXam</button>
       {currentView === 'list' && <ExamList exams={examsData} onSelectExam={handleSelectExam} />}
       {currentView === 'exam' && selectedExam && (
         <Exam exam={selectedExam} onSubmit={handleSubmitExam} />
