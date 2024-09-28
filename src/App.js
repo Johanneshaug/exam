@@ -29,7 +29,9 @@ function App() {
   return (
     <div className="App">
       <header>
-        <button onClick={handleRestart} className="logo">eXam</button>
+        <button onClick={handleRestart} className="logo">
+          {selectedExam ? `${selectedExam.title} eXam` : 'eXam'}
+        </button>
       </header>
       <main>
         {currentView === 'list' && <ExamList exams={examsData} onSelectExam={handleSelectExam} />}
@@ -45,7 +47,7 @@ function App() {
         )}
       </main>
       <footer className="app-footer">
-        © {new Date().getFullYear()} eXam App. All rights reserved.
+        © {new Date().getFullYear()} eXam. All rights reserved.
       </footer>
     </div>
   );

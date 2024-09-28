@@ -18,14 +18,14 @@ function Exam({ exam, onSubmit }) {
 
   return (
     <div>
-      <h2>{exam.title}</h2>
       <form onSubmit={handleSubmit}>
-        {exam.questions.map((question) => (
+        {exam.questions.map((question, index) => (
           <Question 
             key={question.id} 
             question={question} 
             answer={answers[question.id] || ''} 
             onAnswerChange={handleAnswerChange} 
+            index={index + 1} // Pass the question index (1-based)
           />
         ))}
         <button type="submit">Submit Exam</button>

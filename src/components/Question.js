@@ -1,14 +1,15 @@
 import React from 'react';
 
-
-function Question({ question, answer, onAnswerChange }) {
+function Question({ question, answer, onAnswerChange, index }) {
   const handleChange = (e) => {
     onAnswerChange(question.id, e.target.value);
   };
 
   return (
     <div className="question">
-      <p><strong>{question.text}</strong></p>
+      <p className="question-text">
+        <strong>{index}. {question.text}</strong>
+      </p>
       {question.type === 'text' ? (
         <input 
           type="text" 

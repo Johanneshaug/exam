@@ -23,22 +23,22 @@ function Review({ exam, userAnswers, onRestart }) {
       {exam.questions.map((question) => (
         <div key={question.id} className="review-question">
           <p><strong>{question.text}</strong></p>
-          <p>Your Answer: {userAnswers[question.id]}</p>
-          <p>Solution: {question.solution}</p>
+          <p><strong>Your Answer:</strong> {userAnswers[question.id]}</p>
+          <p><strong>Solution:</strong> {question.solution}</p>
           <label>
-            Rate your answer (1-5): 
-            <input 
-              type="number" 
-              min="1" 
-              max="5" 
-              value={ratings[question.id] || ''} 
-              onChange={(e) => handleRatingChange(question.id, e.target.value)} 
-            />
+            Rate your answer (0-5): 
+            <select
+              value={ratings[question.id] || 0} 
+              onChange={(e) => handleRatingChange(question.id, e.target.value)}
+            >
+              {[0, 1, 2, 3, 4, 5].map((value) => (
+                <option key={value} value={value}>{value}</option>
+              ))}
+            </select>
           </label>
         </div>
       ))}
       <button onClick={handleSubmitRatings}>Submit Ratings</button>
-      <button onClick={onRestart}>Take Another Exam</button>
     </div>
   );
 }
