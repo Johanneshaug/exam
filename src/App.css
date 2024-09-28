@@ -1,44 +1,65 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .App {
   font-family: 'Courier New', serif;
-  margin: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the App takes at least the full viewport height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Adjust header styles */
+.app-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px; /* Set a fixed height for the header */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
+  z-index: 1000; /* Ensure header is above other content */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  background-color: #008080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 
 .logo {
-  display: inline-block;
   font-family: 'Academy Engraved LET', serif;
   font-size: 500%;
   background: none;
+  color: #ffffff;
   border: none;
   cursor: pointer;
+  line-height: 1.2;  /* Adjust this value as needed */
+  height: 1em;
+  vertical-align: text-top;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: visible;
+  text-align: center;
 }
 
-h1 {
-  font-family: 'Academy Engraved LET', serif;
-  text-align: center;
-  color: #333;
+.main-content {
+  padding-top: 140px; /* Increased padding to ensure content starts below header */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F0F0F0;
 }
 
 button {
@@ -46,6 +67,9 @@ button {
   margin: 5px 0;
   padding: 8px 12px;
   font-size: 16px;
+  cursor: pointer;
+  background-color: #FFC000;
+  color: #000000;
 }
 
 .question, .review-question {
@@ -61,12 +85,13 @@ input[type="text"], input[type="number"] {
   margin-top: 5px;
   box-sizing: border-box;
   outline: none;
+  caret-color: #7f7f7f;
 }
 
 .noBullets {
-  list-style-type: none; /* This removes the bullets */
-  padding: 0;           /* Removes the default padding */
-  margin: 0;            /* Removes margin for some browsers */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .spin {
@@ -77,7 +102,7 @@ input[type="text"], input[type="number"] {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  justify-content: center; /* Center the buttons horizontally */
+  justify-content: center;
   align-items: center; 
 }
 
@@ -133,3 +158,22 @@ input[type="text"], input[type="number"] {
   outline-offset: 2px;
 }
 
+/* Override button styles for the logo */
+.app-header .logo {
+  background-color: transparent;
+  color: #000;
+  font-size: 500%;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background-color: #F0F0F0;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
