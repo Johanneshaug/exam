@@ -265,6 +265,74 @@ const exams = [
         solution: 'Klasse',
       },
     ],
+  },
+  {
+    id: 6,
+    title: 'Unglaubliche Fakten',
+    tag: 'KI-Generiert',
+    visible: false,
+    questions: [
+      {
+        type: 'multiple-choice',
+        id: 'q1',
+        text: 'Welche unerwartete Entdeckung machten Archäologen kürzlich unter dem Brandenburger Tor?',
+        possibleAnswers: [
+          'Ein unterirdisches Bunkerssystem aus dem Kalten Krieg',
+          'Eine antike römische Siedlung',
+          'Ein verborgenes Bernsteinzimmer',
+          'Ein funktionierendes U-Bahn-Netz aus dem 19. Jahrhundert'
+        ],
+        solution: 'Ein funktionierendes U-Bahn-Netz aus dem 19. Jahrhundert',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q2',
+        text: 'Welche überraschende Fähigkeit wurde bei einer Studie an der Universität Heidelberg bei Tauben entdeckt?',
+        possibleAnswers: [
+          'Sie können komplexe mathematische Gleichungen lösen',
+          'Sie besitzen ein fotografisches Gedächtnis',
+          'Sie können menschliche Sprache verstehen und übersetzen',
+          'Sie können Gesichter besser erkennen als KI-Systeme'
+        ],
+        solution: 'Sie können Gesichter besser erkennen als KI-Systeme',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q3',
+        text: 'Welche unerwartete Nebenwirkung wurde bei einem neuen Haarwuchsmittel festgestellt?',
+        possibleAnswers: [
+          'Es verlängert die Lebensdauer um durchschnittlich 10 Jahre',
+          'Es verbessert die Sehkraft erheblich',
+          'Es ermöglicht das Verstehen von Tiersprachen',
+          'Es steigert die mathematischen Fähigkeiten drastisch'
+        ],
+        solution: 'Es steigert die mathematischen Fähigkeiten drastisch',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q4',
+        text: 'Welche erstaunliche Entdeckung machten Wissenschaftler über die Zusammensetzung des Mondes?',
+        possibleAnswers: [
+          'Er besteht zu 30% aus Käse',
+          'Er enthält große Mengen an Diamanten',
+          'Er hat einen flüssigen Kern aus Quecksilber',
+          'Er besitzt ein eigenes Magnetfeld, stärker als das der Erde'
+        ],
+        solution: 'Er besitzt ein eigenes Magnetfeld, stärker als das der Erde',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q5',
+        text: 'Welche unglaubliche Fähigkeit entwickelten Menschen in einer isolierten Gemeinschaft in den Alpen?',
+        possibleAnswers: [
+          'Sie können im Schlaf lernen',
+          'Sie altern rückwärts ab dem 50. Lebensjahr',
+          'Sie können Gedanken telepathisch übertragen',
+          'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben'
+        ],
+        solution: 'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben',
+      },
+    ],
   }
 ];
 

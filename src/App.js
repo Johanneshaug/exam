@@ -10,6 +10,8 @@ function App() {
   const [selectedExam, setSelectedExam] = useState(null);
   const [userAnswers, setUserAnswers] = useState({});
   const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState('');
+  const [aiReviews, setAiReviews] = useState({});
 
   const handleSelectExam = (exam) => {
     setSelectedExam(exam);
@@ -18,6 +20,13 @@ function App() {
 
   const handleSubmitExam = (answers) => {
     setUserAnswers(answers);
+    setAiReviews({});  // Clear any previous AI reviews
+    setCurrentView('review');
+  };
+
+  const handleSubmitExamWithAI = (answers, reviews) => {
+    setUserAnswers(answers);
+    setAiReviews(reviews);
     setCurrentView('review');
   };
 
@@ -25,9 +34,12 @@ function App() {
     setCurrentView('list');
     setSelectedExam(null);
     setUserAnswers({});
+    setAiReviews({});
   };
 
   useEffect(() => {
+
+    // Scroll event listener
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsHeaderShrunk(true);
@@ -51,7 +63,7 @@ function App() {
   };
 
   return (
-    <div className={`App ${isHeaderShrunk ? 'shrink' : ''}`}>
+    <div className={`App ${isHeaderShrunk ? 'shrink' : ''} ${currentView}-view`}>
       <header className={`app-header ${isHeaderShrunk ? 'shrink' : ''}`}>
         <button 
           className={`logo ${isHeaderShrunk ? 'shrink' : ''}`}
@@ -60,15 +72,21 @@ function App() {
           eXam
         </button>
       </header>
-      <main>
+      <main className="main-content">
+        
         {currentView === 'list' && <ExamList exams={examsData} onSelectExam={handleSelectExam} />}
         {currentView === 'exam' && selectedExam && (
-          <Exam exam={selectedExam} onSubmit={handleSubmitExam} />
+          <Exam 
+            exam={selectedExam} 
+            onSubmit={handleSubmitExam}
+            onSubmitWithAI={handleSubmitExamWithAI}
+          />
         )}
         {currentView === 'review' && selectedExam && (
           <Review 
             exam={selectedExam} 
             userAnswers={userAnswers} 
+            aiReviews={aiReviews}
             onRestart={handleRestart} 
           />
         )}

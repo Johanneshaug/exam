@@ -1,53 +1,86 @@
 import React, { useState, useEffect } from 'react';
 
-function Review({ exam, userAnswers, onRestart }) {
-  const [ratings, setRatings] = useState({});
-  const [score, setScore] = useState(0);
-  const possibleScore = exam.questions.length * 5; // Assuming the max rating is 5
+function Review({ exam, userAnswers, aiReviews, onRestart }) {
+  const [scores, setScores] = useState({});
+  const [totalScore, setTotalScore] = useState(0);
+  const possibleScore = exam.questions.length * 5;
 
   useEffect(() => {
-    // Calculate the total score whenever ratings change
-    const totalScore = Object.values(ratings).reduce((acc, rating) => acc + parseInt(rating, 10), 0);
-    setScore(totalScore);
-  }, [ratings]);
+    if (Object.keys(aiReviews).length > 0) {
+      const aiTotalScore = Object.values(aiReviews).reduce((acc, review) => {
+        const scoreMatch = review.match(/Punkte: (\d+)\/5/);
+        return acc + (scoreMatch ? parseInt(scoreMatch[1], 10) : 0);
+      }, 0);
+      setTotalScore(aiTotalScore);
+    }
+  }, [aiReviews]);
 
-  const handleRatingChange = (questionId, rating) => {
-    setRatings((prevRatings) => ({
-      ...prevRatings,
-      [questionId]: rating,
+  const handleScoreChange = (questionId, score) => {
+    setScores(prevScores => ({
+      ...prevScores,
+      [questionId]: score
     }));
   };
 
+  useEffect(() => {
+    if (Object.keys(aiReviews).length === 0) {
+      const newTotalScore = Object.values(scores).reduce((acc, score) => acc + score, 0);
+      setTotalScore(newTotalScore);
+    }
+  }, [scores, aiReviews]);
+
   const handleSubmitRatings = () => {
-    // For demonstration, we'll just log the ratings
-    console.log('User Ratings:', ratings);
-    alert('Ratings submitted! Check console for details.');
+    if (Object.keys(aiReviews).length > 0) {
+      console.log('KI-Bewertungen:', aiReviews);
+    } else {
+      console.log('Selbstbewertung:', scores);
+    }
     onRestart();
+  };
+
+  const truncateFeedback = (feedback, wordLimit = 15) => {
+    const words = feedback.split(' ');
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(' ') + '...';
+    }
+    return feedback;
   };
 
   return (
     <div>
-      <h2>Review Your Answers</h2>
-      {exam.questions.map((question) => (
+      <h2>Überprüfen Sie Ihre Antworten</h2>
+      {exam.questions.map((question, index) => (
         <div key={question.id} className="review-question">
-          <p><strong>{question.text}</strong></p>
-          <p><strong>Your Answer:</strong> {userAnswers[question.id]}</p>
-          <p><strong>Solution:</strong> {question.solution}</p>
-          <label>
-            <i>Rate your answer (0-5): </i>
-            <select className="rating-select"
-              value={ratings[question.id] || 0} 
-              onChange={(e) => handleRatingChange(question.id, e.target.value)}
-            >
-              {[0, 1, 2, 3, 4, 5].map((value) => (
-                <option key={value} value={value}>{value}</option>
-              ))}
-            </select>
-          </label>
+          <p><strong>Frage {index + 1}: {question.text}</strong></p>
+          <p><strong>Ihre Antwort:</strong> {userAnswers[question.id] || 'Keine Antwort gegeben'}</p>
+          <p><strong>Lösung:</strong> {question.solution}</p>
+          {aiReviews[question.id] ? (
+            <div className="ai-review">
+              <p><strong>KI-Bewertung:</strong></p>
+              <p>{truncateFeedback(aiReviews[question.id])}</p>
+            </div>
+          ) : (
+            <div className="self-review">
+              <p><strong>Selbstbewertung:</strong></p>
+              <div className="range-wrap">
+                <input
+                  type="range"
+                  min="0"
+                  max="5"
+                  value={scores[question.id] || 0}
+                  onChange={(e) => handleScoreChange(question.id, parseInt(e.target.value))}
+                  className="range"
+                />
+                <div className="range-value">
+                  <span>{scores[question.id] || 0}</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       ))}
-      <p className="score">Score: {score} / {possibleScore}</p>
-      <button onClick={handleSubmitRatings}>Submit Ratings</button>
+      <p className="score">Gesamtpunktzahl: {totalScore} / {possibleScore}</p>
+      <button onClick={handleSubmitRatings}>Überprüfung abschließen</button>
     </div>
   );
 }

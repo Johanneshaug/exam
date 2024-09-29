@@ -1,12 +1,14 @@
 import React from 'react';
 
 function ExamList({ exams, onSelectExam }) {
-  // Group exams by their tags
+  // Filter out exams with visible: false and group the rest by their tags
   const groupedExams = exams.reduce((acc, exam) => {
-    if (!acc[exam.tag]) {
-      acc[exam.tag] = [];
+    if (exam.visible !== false) {  // Only include exams that are not explicitly set to invisible
+      if (!acc[exam.tag]) {
+        acc[exam.tag] = [];
+      }
+      acc[exam.tag].push(exam);
     }
-    acc[exam.tag].push(exam);
     return acc;
   }, {});
 
