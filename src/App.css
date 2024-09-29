@@ -1,3 +1,22 @@
+/* Add these at the top of your CSS file */
+html {
+  height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body {
+  height: 100%;
+  overflow-y: scroll; /* Allow vertical scrolling */
+  background-color: #F0F0F0;
+  transition: padding-top 0.3s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -11,6 +30,8 @@ body, html {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the App takes at least the full viewport height */
+  padding-top: 120px; /* Initial padding to account for the header */
+  transition: padding-top 0.3s ease;
 }
 
 .question-text {
@@ -23,7 +44,7 @@ body, html {
 }
 
 /* Adjust header styles */
-.app-header {
+.app-header, header {
   width: 100%;
   position: fixed;
   top: 0;
@@ -31,16 +52,26 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px; /* Set a fixed height for the header */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add a subtle shadow for depth */
-  z-index: 1000; /* Ensure header is above other content */
+  height: 10%;
+  background-color: #008080;
+
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 9999;
+  transition: all 0.3s ease; /* Add smooth transition */
 }
 
 header {
   background-color: #008080;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 5%; 
 }
 
 .logo {
@@ -50,17 +81,18 @@ header {
   color: #ffffff;
   border: none;
   cursor: pointer;
-  line-height: 1.2;  /* Adjust this value as needed */
+  line-height: 1.2;
   height: 1em;
   vertical-align: text-top;
   display: inline-block;
   white-space: nowrap;
   overflow: visible;
   text-align: center;
+  transition: all 0.3s ease; /* Add smooth transition */
 }
 
 .main-content {
-  padding-top: 140px; /* Increased padding to ensure content starts below header */
+
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -69,7 +101,9 @@ header {
 }
 
 body {
+
   background-color: #F0F0F0;
+  transition: padding-top 0.3s ease; /* Add smooth transition */
 }
 
 button {
@@ -215,7 +249,7 @@ input[type="text"], input[type="number"] {
 /* Override button styles for the logo */
 .app-header .logo {
   background-color: transparent;
-  color: #000;
+  color: #ffffff;
   font-size: 500%;
   padding: 0;
   margin: 0;
@@ -227,4 +261,32 @@ footer {
   text-align: center;
   width: 100%;
   margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* New classes for shrunk state */
+.app-header.shrink, header.shrink {
+  height: 60px;
+}
+
+.logo.shrink {
+  font-size: 250%;
+}
+
+body.shrink {
+  padding-top: 60px; /* Adjust this value to match the shrunk header height */
+}
+
+.App.shrink {
+  padding-top: 60px; /* Adjusted padding when header is shrunk */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

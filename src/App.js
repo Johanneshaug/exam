@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ExamList from './components/ExamList';
 import Exam from './components/Exam';
 import Review from './components/Review';
@@ -9,7 +9,8 @@ function App() {
   const [currentView, setCurrentView] = useState('list'); // 'list', 'exam', 'review'
   const [selectedExam, setSelectedExam] = useState(null);
   const [userAnswers, setUserAnswers] = useState({});
-  
+  const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
+
   const handleSelectExam = (exam) => {
     setSelectedExam(exam);
     setCurrentView('exam');
@@ -26,11 +27,37 @@ function App() {
     setUserAnswers({});
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsHeaderShrunk(true);
+      } else {
+        setIsHeaderShrunk(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Function to handle navigation to the landing page
+  const handleLogoClick = () => {
+    setCurrentView('list');
+    setSelectedExam(null);
+    setUserAnswers({});
+  };
+
   return (
-    <div className="App">
-      <header>
-        <button onClick={handleRestart} className="logo">
-          {selectedExam ? `${selectedExam.title} eXam` : 'eXam'}
+    <div className={`App ${isHeaderShrunk ? 'shrink' : ''}`}>
+      <header className={`app-header ${isHeaderShrunk ? 'shrink' : ''}`}>
+        <button 
+          className={`logo ${isHeaderShrunk ? 'shrink' : ''}`}
+          onClick={handleLogoClick}
+        >
+          eXam
         </button>
       </header>
       <main>
