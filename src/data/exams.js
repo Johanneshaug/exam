@@ -77,7 +77,7 @@ const exams = [
       {
         type: 'text',
         id: 'q2',
-        text: 'Nennen Sie drei konkrete Maßnahmen, die eine überschuldete Person ergreifen kann, um ihre finanzielle Situation zu verbessern.',
+        text: 'Nennen Sie 3 konkrete Maßnahmen, die eine überschuldete Person ergreifen kann, um ihre finanzielle Situation zu verbessern.',
         solution: '1. Schuldnerberatung aufsuchen, 2. Ausgaben reduzieren und Haushaltsbuch führen, 3. Umschuldung oder Verhandlung mit Gläubigern über Ratenzahlungen',
       },
       {
