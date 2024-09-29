@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Review({ exam, userAnswers, onRestart }) {
   const [ratings, setRatings] = useState({});
+  const [score, setScore] = useState(0);
+  const possibleScore = exam.questions.length * 5; // Assuming the max rating is 5
+
+  useEffect(() => {
+    // Calculate the total score whenever ratings change
+    const totalScore = Object.values(ratings).reduce((acc, rating) => acc + parseInt(rating, 10), 0);
+    setScore(totalScore);
+  }, [ratings]);
 
   const handleRatingChange = (questionId, rating) => {
     setRatings((prevRatings) => ({
@@ -26,8 +34,8 @@ function Review({ exam, userAnswers, onRestart }) {
           <p><strong>Your Answer:</strong> {userAnswers[question.id]}</p>
           <p><strong>Solution:</strong> {question.solution}</p>
           <label>
-            Rate your answer (0-5): 
-            <select
+            <i>Rate your answer (0-5): </i>
+            <select className="rating-select"
               value={ratings[question.id] || 0} 
               onChange={(e) => handleRatingChange(question.id, e.target.value)}
             >
@@ -38,6 +46,7 @@ function Review({ exam, userAnswers, onRestart }) {
           </label>
         </div>
       ))}
+      <p className="score">Score: {score} / {possibleScore}</p>
       <button onClick={handleSubmitRatings}>Submit Ratings</button>
     </div>
   );
