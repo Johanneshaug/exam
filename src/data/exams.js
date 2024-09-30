@@ -277,7 +277,7 @@ const exams = [
         id: 'q1',
         text: 'Welche unerwartete Entdeckung machten Archäologen kürzlich unter dem Brandenburger Tor?',
         possibleAnswers: [
-          'Ein unterirdisches Bunkerssystem aus dem Kalten Krieg',
+          'Ein unterirdisches Bunkersystem aus dem Kalten Krieg',
           'Eine antike römische Siedlung',
           'Ein verborgenes Bernsteinzimmer',
           'Ein funktionierendes U-Bahn-Netz aus dem 19. Jahrhundert'
@@ -331,6 +331,187 @@ const exams = [
           'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben'
         ],
         solution: 'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben',
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: 'IPv6 und der Unterschied zu IPv4',
+    tag: 'Netzwerke',
+    questions: [
+      {
+        type: 'text',
+        id: 'q1',
+        text: 'Wann wurde IPv4 entwickelt?',
+        solution: 'In den 1970er Jahren.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q2',
+        text: 'Wie viele Bits hat eine IPv6-Adresse im Vergleich zu einer IPv4-Adresse?',
+        possibleAnswers: [
+          '32 Bits (IPv6) vs. 128 Bits (IPv4)',
+          '64 Bits (IPv6) vs. 32 Bits (IPv4)',
+          '128 Bits (IPv6) vs. 32 Bits (IPv4)',
+          '256 Bits (IPv6) vs. 64 Bits (IPv4)'
+        ],
+        solution: '128 Bits (IPv6) vs. 32 Bits (IPv4)',
+      },
+      {
+        type: 'text',
+        id: 'q3',
+        text: 'Erklären Sie den Unterschied in der Notation zwischen IPv4 und IPv6-Adressen.',
+        solution: 'IPv4-Adressen werden als vier Gruppen von Dezimalzahlen dargestellt, getrennt durch Punkte (z.B. 192.168.0.1). IPv6-Adressen werden als acht Gruppen von vier Hexadezimalziffern dargestellt, getrennt durch Doppelpunkte (z.B. 2001:0db8:85a3:0000:0000:8a2e:0370:7334).',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q4',
+        text: 'Welche Funktion gibt es in IPv6, die das Netzwerk-Address-Translation (NAT) von IPv4 größtenteils überflüssig macht?',
+        possibleAnswers: [
+          'IPsec',
+          'Stateless Address Autoconfiguration (SLAAC)',
+          'Quality of Service (QoS)',
+          'Multicast'
+        ],
+        solution: 'Stateless Address Autoconfiguration (SLAAC)',
+      },
+      {
+        type: 'text',
+        id: 'q5',
+        text: 'Was ist der Unterschied zwischen Link-Local Addresses in IPv6 und IPv4?',
+        solution: 'In IPv6 hat jede Netzwerkschnittstelle automatisch eine Link-Local Address, die mit "fe80" beginnt und nur innerhalb des lokalen Netzwerksegments gültig ist. In IPv4 gibt es zwar auch Link-Local Addresses (169.254.0.0/16), diese werden aber nur verwendet, wenn keine andere IP-Adresse verfügbar ist.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q6',
+        text: 'Welches Protokoll ersetzt ARP (Address Resolution Protocol) in IPv6?',
+        possibleAnswers: [
+          'RARP',
+          'NDP',
+          'ICMP',
+          'DHCP'
+        ],
+        solution: 'NDP',
+      },
+      {
+        type: 'text',
+        id: 'q7',
+        text: 'Erklären Sie den Begriff "IPv6 Tunneling" und wozu es verwendet wird.',
+        solution: 'IPv6 Tunneling ist eine Methode, um IPv6-Pakete über ein IPv4-Netzwerk zu transportieren. Es wird verwendet, um IPv6-Konnektivität in Netzwerken zu ermöglichen, die noch nicht vollständig auf IPv6 umgestellt sind, indem IPv6-Pakete in IPv4-Pakete eingekapselt werden.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q8',
+        text: 'Welche Sicherheitsfunktion ist in IPv6 standardmäßig integriert?',
+        possibleAnswers: [
+          'SSL/TLS',
+          'IPsec',
+          'WPA3',
+          'OpenVPN'
+        ],
+        solution: 'IPsec',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was macht IPsec?',
+        solution: 'IPsec sorgt für Authentizität, Integrität und Vertraulichkeit von Daten in IP-Netzwerken durch Verschlüsselung und Authentifizierungsprotokolle.',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was ist der Unterschied zwischen Unicast, Multicast und Anycast in IPv6?',
+        solution: 'Unicast sendet Daten an einen einzelnen Empfänger. Multicast sendet Daten an eine Gruppe von Empfängern. Anycast sendet Daten an den nächstgelegenen Empfänger einer Gruppe. IPv6 unterstützt alle drei Arten nativ, während IPv4 hauptsächlich für Unicast optimiert ist.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q10',
+        text: 'Welche Aussage über die Fragmentierung von Paketen in IPv6 ist korrekt?',
+        possibleAnswers: [
+          'Fragmentierung ist in IPv6 nicht erlaubt',
+          'Fragmentierung wird nur vom Sender durchgeführt, nicht von Routern',
+          'Fragmentierung funktioniert genauso wie in IPv4',
+          'Fragmentierung wird ausschließlich von Routern durchgeführt'
+        ],
+        solution: 'Fragmentierung wird nur vom Sender durchgeführt, nicht von Routern',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was bedeutet IANA?',
+        solution: 'Internet Assigned Numbers Authority.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q10',
+        text: 'Wann hat die europäische IP-Adressverwaltung Réseaux IP Européens ihren letzten IPv4 Bereich (/22) zugeteilt?',
+        possibleAnswers: [
+          '2019',
+          '2020',
+          '2021',
+          '2022'
+        ],
+        solution: '2019',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Welche beiden Protokolle werden in IPV6 nicht mehr gebraucht und warum?',
+        solution: 'NAT und PAT werden in IPV6 nicht mehr gebraucht, weil jedes Gerät eine eindeutige globale IP-Adresse hat.',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was ist ein "Dualstack"?',
+        solution: 'Ist eine Netzwerktechnologie, bei der sowohl IPv4 als auch IPv6 auf einem Netzwerk betrieben werden kann.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q10',
+        text: 'Was wurde in IPV6 vereinfacht?',
+        possibleAnswers: [
+          'Adressvergabe',
+          'Headeraufbau',
+          'Fragmentierung',
+          'Sicherheitsprotokoll'
+        ],
+        solution: 'Headeraufbau',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'In welche 2 Teile ist eine IPv6-Adresse aufgeteilt?',
+        solution: 'Präfix und Interface-ID',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was beschreibt der Präfix einer IPv6-Adresse?',
+        solution: 'Die Präfixe beschreiben das Netz/Subnetz.',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Was beschreibt die Interface-ID?',
+        solution: 'Die Interface-ID beschreibt das Gerät/die Schnittstelle.',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Wie viele Bits hat ein Hexadezimalwert?',
+        solution: '4 Bits',
+      },
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Welche Regeln gelten für das Verkürzen der IPv6-Adresse?',
+        solution: 'Eine IPv6-Adresse kann verkürzt werden, indem führende Nullen in jedem Hexadezimal-Block weggelassen und durchgehende Blöcke von Nullen durch "::" ersetzt werden, aber nur einmal pro Adresse.',
+      }
+      {
+        type: 'text',
+        id: 'q9',
+        text: 'Wie werden IPV6 URLs dargestellt?',
+        solution: 'In eckigen Klammern, z.B. http://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]',
       },
     ],
   }
