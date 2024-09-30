@@ -550,7 +550,43 @@ const exams = [
         "id": "q17",
         "text": "Was ist Anycast?",
         "solution": "Layer 3."
-      }
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Warum verwendet man den Befehl: Ping ::1",
+        "solution": "Um Pakete an das Loopbackinterface zu schicken und um schauen ob IPV6funktioniert"
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Welcher Adresstyp wird als öffentliche IPV6 verwendet",
+        "solution": "Global Unicastr"
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Wodurch wird die Broadcastadresse in IPV6 ersetzt",
+        "solution": "Durch die Multicastadresse"
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Was ist Tunneling",
+        "solution": "Keine Ahnung"
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Was ist der Unterschied zwischen Unicast, Multicast und Anycast",
+        "solution": "Keine Ahnung"
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Was machen Privacy-Extensions",
+        "solution": "Keine Ahnung"
+      },
     ],
   }
 ];
