@@ -335,7 +335,7 @@ const exams = [
   },
   {
     id: 7,
-    title: 'IPv6 und der Unterschied zu IPv4',
+    title: 'IPv6',
     tag: 'Netzwerke',
     questions: [
       {
@@ -512,6 +512,45 @@ const exams = [
         text: 'Wie werden IPV6 URLs dargestellt?',
         solution: 'In eckigen Klammern, z.B. http://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]',
       },
+      {
+        type: 'multiple-choice',
+        id: 'q16',
+        text: 'Was ist kein gültiger Scope einer IPv6-Adresse?',
+        possibleAnswers: [
+          'Host-Scope (::1)',
+          'Link-Local Scope (fe80)',
+          'Multicast Scope (ff)',
+          'Regional-Scope (fa)',
+          'Unique-Local-Scope (fc00 und fd80)',
+          'Site-Local-Scope (fec0)',
+          'Global-Scope (2, 3, ...)'
+        ],
+        solution: 'Regional-Scope',
+      },
+      {
+        type: 'text',
+        id: 'q17',
+        text: 'Was ersetzt APIPA bei IPV6',
+        solution: 'Die Link-Local-Adresse'
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Wie funktioniert die IPv4-IPv6-Abwärtskompatibilität?",
+        "solution": "Durch das Präfix ::ffff: gefolgt von der IPv4-Adresse in hexadezimaler Form."
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Auf welcher OSI-Schicht arbeitet IPV6?",
+        "solution": "Layer 3."
+      },
+      {
+        "type": "text",
+        "id": "q17",
+        "text": "Was ist Anycast?",
+        "solution": "Layer 3."
+      }
     ],
   }
 ];
