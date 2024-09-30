@@ -30,20 +30,9 @@ function Review({ exam, userAnswers, aiReviews, onRestart }) {
   }, [scores, aiReviews]);
 
   const handleSubmitRatings = () => {
-    if (Object.keys(aiReviews).length > 0) {
-      console.log('KI-Bewertungen:', aiReviews);
-    } else {
-      console.log('Selbstbewertung:', scores);
-    }
+    // Here you can handle the submission of self-ratings
+    console.log('Self-ratings submitted:', scores);
     onRestart();
-  };
-
-  const truncateFeedback = (feedback, wordLimit = 15) => {
-    const words = feedback.split(' ');
-    if (words.length > wordLimit) {
-      return words.slice(0, wordLimit).join(' ') + '...';
-    }
-    return feedback;
   };
 
   return (
@@ -57,24 +46,20 @@ function Review({ exam, userAnswers, aiReviews, onRestart }) {
           {aiReviews[question.id] ? (
             <div className="ai-review">
               <p><strong>KI-Bewertung:</strong></p>
-              <p>{truncateFeedback(aiReviews[question.id])}</p>
+              <p>{aiReviews[question.id]}</p>
             </div>
           ) : (
             <div className="self-review">
               <p><strong>Selbstbewertung:</strong></p>
-              <div className="range-wrap">
-                <input
-                  type="range"
-                  min="0"
-                  max="5"
-                  value={scores[question.id] || 0}
-                  onChange={(e) => handleScoreChange(question.id, parseInt(e.target.value))}
-                  className="range"
-                />
-                <div className="range-value">
-                  <span>{scores[question.id] || 0}</span>
-                </div>
-              </div>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                value={scores[question.id] || 0}
+                onChange={(e) => handleScoreChange(question.id, parseInt(e.target.value))}
+                className="range"
+              />
+              <span>{scores[question.id] || 0} / 5</span>
             </div>
           )}
         </div>
