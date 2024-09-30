@@ -339,12 +339,6 @@ const exams = [
     tag: 'Netzwerke',
     questions: [
       {
-        type: 'text',
-        id: 'q1',
-        text: 'Wann wurde IPv4 entwickelt?',
-        solution: 'In den 1970er Jahren.',
-      },
-      {
         type: 'multiple-choice',
         id: 'q2',
         text: 'Wie viele Bits hat eine IPv6-Adresse im Vergleich zu einer IPv4-Adresse?',
@@ -357,12 +351,6 @@ const exams = [
         solution: '128 Bits (IPv6) vs. 32 Bits (IPv4)',
       },
       {
-        type: 'text',
-        id: 'q3',
-        text: 'Erklären Sie den Unterschied in der Notation zwischen IPv4 und IPv6-Adressen.',
-        solution: 'IPv4-Adressen werden als vier Gruppen von Dezimalzahlen dargestellt, getrennt durch Punkte (z.B. 192.168.0.1). IPv6-Adressen werden als acht Gruppen von vier Hexadezimalziffern dargestellt, getrennt durch Doppelpunkte (z.B. 2001:0db8:85a3:0000:0000:8a2e:0370:7334).',
-      },
-      {
         type: 'multiple-choice',
         id: 'q4',
         text: 'Welche Funktion gibt es in IPv6, die das Netzwerk-Address-Translation (NAT) von IPv4 größtenteils überflüssig macht?',
@@ -373,12 +361,6 @@ const exams = [
           'Multicast'
         ],
         solution: 'Stateless Address Autoconfiguration (SLAAC)',
-      },
-      {
-        type: 'text',
-        id: 'q5',
-        text: 'Was ist der Unterschied zwischen Link-Local Addresses in IPv6 und IPv4?',
-        solution: 'In IPv6 hat jede Netzwerkschnittstelle automatisch eine Link-Local Address, die mit "fe80" beginnt und nur innerhalb des lokalen Netzwerksegments gültig ist. In IPv4 gibt es zwar auch Link-Local Addresses (169.254.0.0/16), diese werden aber nur verwendet, wenn keine andere IP-Adresse verfügbar ist.',
       },
       {
         type: 'multiple-choice',
@@ -514,7 +496,7 @@ const exams = [
       },
       {
         type: 'multiple-choice',
-        id: 'q16',
+        id: 'q23',
         text: 'Was ist kein gültiger Scope einer IPv6-Adresse?',
         possibleAnswers: [
           'Host-Scope (::1)',
@@ -529,63 +511,57 @@ const exams = [
       },
       {
         type: 'text',
-        id: 'q17',
+        id: 'q24',
         text: 'Was ersetzt APIPA bei IPV6',
         solution: 'Die Link-Local-Adresse'
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q25",
         "text": "Wie funktioniert die IPv4-IPv6-Abwärtskompatibilität?",
         "solution": "Durch das Präfix ::ffff: gefolgt von der IPv4-Adresse in hexadezimaler Form."
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q26",
         "text": "Auf welcher OSI-Schicht arbeitet IPV6?",
         "solution": "Layer 3."
       },
       {
         "type": "text",
-        "id": "q17",
-        "text": "Was ist Anycast?",
-        "solution": "Layer 3."
-      },
-      {
-        "type": "text",
-        "id": "q17",
+        "id": "q28",
         "text": "Warum verwendet man den Befehl: Ping ::1",
         "solution": "Um Pakete an das Loopbackinterface zu schicken und um schauen ob IPV6funktioniert"
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q29",
         "text": "Welcher Adresstyp wird als öffentliche IPV6 verwendet",
-        "solution": "Global Unicastr"
+        "solution": "Global Unicast"
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q30",
         "text": "Wodurch wird die Broadcastadresse in IPV6 ersetzt",
         "solution": "Durch die Multicastadresse"
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q31",
         "text": "Was ist Tunneling",
-        "solution": "Keine Ahnung"
+        "solution": "Tunneling kapselt ein Netzwerkprotokoll innerhalb eines anderen, um Daten über inkompatible Netzwerke zu transportieren oder zusätzliche Funktionen wie Sicherheit zu bieten."
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q32",
         "text": "Was ist der Unterschied zwischen Unicast, Multicast und Anycast",
-        "solution": "Keine Ahnung"
+        "solution": "Unicast sendet Daten an ein einzelnes Ziel, Multicast an eine Gruppe von Empfängern, und Anycast leitet Daten zum nächstgelegenen oder besten Empfänger (am besten erreichbar) aus einer Gruppe mit derselben Adresse."
       },
       {
         "type": "text",
-        "id": "q17",
+        "id": "q33",
         "text": "Was machen Privacy-Extensions",
-        "solution": "Keine Ahnung"
+        "solution": "Privacy Extensions generieren temporäre IPv6-Adressen"
       },
     ],
   }

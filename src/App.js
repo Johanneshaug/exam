@@ -92,7 +92,7 @@ function App() {
         )}
       </main>
       <footer className="app-footer">
-        © {new Date().getFullYear()} eXam. All rights reserved.
+        © {new Date().getFullYear()} eXam. Angaben ohne Gewähr.
       </footer>
     </div>
   );
