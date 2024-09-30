@@ -1,5 +1,4 @@
 const exams = [
-  
   {
     id: 4,
     title: 'Verschuldung und SCHUFA',
@@ -419,13 +418,13 @@ const exams = [
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q10',
         text: 'Was ist der Unterschied zwischen Unicast, Multicast und Anycast in IPv6?',
         solution: 'Unicast sendet Daten an einen einzelnen Empfänger. Multicast sendet Daten an eine Gruppe von Empfängern. Anycast sendet Daten an den nächstgelegenen Empfänger einer Gruppe. IPv6 unterstützt alle drei Arten nativ, während IPv4 hauptsächlich für Unicast optimiert ist.',
       },
       {
         type: 'multiple-choice',
-        id: 'q10',
+        id: 'q11',
         text: 'Welche Aussage über die Fragmentierung von Paketen in IPv6 ist korrekt?',
         possibleAnswers: [
           'Fragmentierung ist in IPv6 nicht erlaubt',
@@ -437,13 +436,13 @@ const exams = [
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q12',
         text: 'Was bedeutet IANA?',
         solution: 'Internet Assigned Numbers Authority.',
       },
       {
         type: 'multiple-choice',
-        id: 'q10',
+        id: 'q13',
         text: 'Wann hat die europäische IP-Adressverwaltung Réseaux IP Européens ihren letzten IPv4 Bereich (/22) zugeteilt?',
         possibleAnswers: [
           '2019',
@@ -455,19 +454,19 @@ const exams = [
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q14',
         text: 'Welche beiden Protokolle werden in IPV6 nicht mehr gebraucht und warum?',
         solution: 'NAT und PAT werden in IPV6 nicht mehr gebraucht, weil jedes Gerät eine eindeutige globale IP-Adresse hat.',
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q15',
         text: 'Was ist ein "Dualstack"?',
         solution: 'Ist eine Netzwerktechnologie, bei der sowohl IPv4 als auch IPv6 auf einem Netzwerk betrieben werden kann.',
       },
       {
         type: 'multiple-choice',
-        id: 'q10',
+        id: 'q16',
         text: 'Was wurde in IPV6 vereinfacht?',
         possibleAnswers: [
           'Adressvergabe',
@@ -479,37 +478,37 @@ const exams = [
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q17',
         text: 'In welche 2 Teile ist eine IPv6-Adresse aufgeteilt?',
         solution: 'Präfix und Interface-ID',
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q18',
         text: 'Was beschreibt der Präfix einer IPv6-Adresse?',
         solution: 'Die Präfixe beschreiben das Netz/Subnetz.',
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q19',
         text: 'Was beschreibt die Interface-ID?',
         solution: 'Die Interface-ID beschreibt das Gerät/die Schnittstelle.',
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q20',
         text: 'Wie viele Bits hat ein Hexadezimalwert?',
         solution: '4 Bits',
       },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q21',
         text: 'Welche Regeln gelten für das Verkürzen der IPv6-Adresse?',
         solution: 'Eine IPv6-Adresse kann verkürzt werden, indem führende Nullen in jedem Hexadezimal-Block weggelassen und durchgehende Blöcke von Nullen durch "::" ersetzt werden, aber nur einmal pro Adresse.',
-      }
+      },
       {
         type: 'text',
-        id: 'q9',
+        id: 'q22',
         text: 'Wie werden IPV6 URLs dargestellt?',
         solution: 'In eckigen Klammern, z.B. http://[2001:0db8:85a3:0000:0000:8a2e:0370:7334]',
       },
