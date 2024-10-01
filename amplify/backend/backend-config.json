@@ -1,0 +1,57 @@
+{
+  "api": {
+    "geminiAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "geminiHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "geminiHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3AndCloudFront"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_geminiHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_geminiHandler_geminiApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_geminiHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "geminiHandler"
+        }
+      ]
+    }
+  }
+}

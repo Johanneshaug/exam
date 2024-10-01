@@ -1,0 +1,92 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-exam-dev-f395b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::503561443969:role/amplify-exam-dev-f395b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::503561443969:role/amplify-exam-dev-f395b-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-exam-dev-f395b-deployment",
+      "UnauthRoleName": "amplify-exam-dev-f395b-unauthRole",
+      "StackName": "amplify-exam-dev-f395b",
+      "StackId": "arn:aws:cloudformation:eu-central-1:503561443969:stack/amplify-exam-dev-f395b/4d515350-7f3e-11ef-b89a-06a3ef4e9561",
+      "AmplifyAppId": "dmg7xgg3f6nh3"
+    }
+  },
+  "function": {
+    "geminiHandler": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-09-30T15:29:05.910Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-09-30T15:29:05.956Z",
+      "distZipFilename": "geminiHandler-37737054476e36796d47-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-exam-dev-f395b-deployment",
+        "s3Key": "amplify-builds/geminiHandler-37737054476e36796d47-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-exam-dev-f395b-deployment/amplify-cfn-templates/function/geminiHandler-cloudformation-template.json",
+        "logicalId": "functiongeminiHandler"
+      },
+      "lastPushTimeStamp": "2024-09-30T16:22:21.755Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::503561443969:role/examLambdaRole771e29b0-dev",
+        "Region": "eu-central-1",
+        "Arn": "arn:aws:lambda:eu-central-1:503561443969:function:geminiHandler-dev",
+        "Name": "geminiHandler-dev",
+        "LambdaExecutionRole": "examLambdaRole771e29b0-dev"
+      },
+      "lastPushDirHash": "qhZ4LfH3T1n7tpe4BBf4AIQRpf4="
+    }
+  },
+  "api": {
+    "geminiAPI": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "geminiHandler",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-exam-dev-f395b-deployment/amplify-cfn-templates/api/geminiAPI-cloudformation-template.json",
+        "logicalId": "apigeminiAPI"
+      },
+      "lastPushTimeStamp": "2024-09-30T16:22:21.757Z",
+      "output": {
+        "ApiName": "geminiAPI",
+        "RootUrl": "https://fkhskig6oc.execute-api.eu-central-1.amazonaws.com/dev",
+        "ApiId": "fkhskig6oc"
+      },
+      "lastPushDirHash": "PUyttyNwMcJQluU0jgwQMj6lekM="
+    }
+  },
+  "hosting": {
+    "S3AndCloudFront": {
+      "service": "S3AndCloudFront",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-exam-dev-f395b-deployment/amplify-cfn-templates/hosting/template.json",
+        "logicalId": "hostingS3AndCloudFront"
+      },
+      "lastPushTimeStamp": "2024-09-30T16:22:21.757Z",
+      "output": {
+        "CloudFrontSecureURL": "https://d1zbhzc28sgkhr.cloudfront.net",
+        "S3BucketSecureURL": "https://exam5823469710338562-dev.s3.amazonaws.com",
+        "CloudFrontOriginAccessIdentity": "E18AM2Y1VUHW4J",
+        "WebsiteURL": "http://exam5823469710338562-dev.s3-website.eu-central-1.amazonaws.com",
+        "CloudFrontDistributionID": "E1GUHJCSDUR4AM",
+        "Region": "eu-central-1",
+        "HostingBucketName": "exam5823469710338562-dev",
+        "CloudFrontDomainName": "d1zbhzc28sgkhr.cloudfront.net"
+      },
+      "lastPushDirHash": "dR7vfUHIkj10tuST0j6h/hqDOkw="
+    }
+  }
+}

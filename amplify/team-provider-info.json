@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-exam-dev-f395b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::503561443969:role/amplify-exam-dev-f395b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::503561443969:role/amplify-exam-dev-f395b-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-exam-dev-f395b-deployment",
+      "UnauthRoleName": "amplify-exam-dev-f395b-unauthRole",
+      "StackName": "amplify-exam-dev-f395b",
+      "StackId": "arn:aws:cloudformation:eu-central-1:503561443969:stack/amplify-exam-dev-f395b/4d515350-7f3e-11ef-b89a-06a3ef4e9561",
+      "AmplifyAppId": "dmg7xgg3f6nh3"
+    },
+    "categories": {
+      "function": {
+        "geminiHandler": {
+          "geminiApiKey": "AIzaSyC1eJ3XhBZHqHSC9NnYM37uRGve1XYor7M",
+          "deploymentBucketName": "amplify-exam-dev-f395b-deployment",
+          "s3Key": "amplify-builds/geminiHandler-37737054476e36796d47-build.zip"
+        }
+      },
+      "api": {
+        "geminiAPI": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

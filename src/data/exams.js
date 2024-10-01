@@ -547,18 +547,6 @@ const exams = [
       },
       {
         "type": "text",
-        "id": "q31",
-        "text": "Was ist Tunneling",
-        "solution": "Tunneling kapselt ein Netzwerkprotokoll innerhalb eines anderen, um Daten über inkompatible Netzwerke zu transportieren oder zusätzliche Funktionen wie Sicherheit zu bieten."
-      },
-      {
-        "type": "text",
-        "id": "q32",
-        "text": "Was ist der Unterschied zwischen Unicast, Multicast und Anycast",
-        "solution": "Unicast sendet Daten an ein einzelnes Ziel, Multicast an eine Gruppe von Empfängern, und Anycast leitet Daten zum nächstgelegenen oder besten Empfänger (am besten erreichbar) aus einer Gruppe mit derselben Adresse."
-      },
-      {
-        "type": "text",
         "id": "q33",
         "text": "Was machen Privacy-Extensions",
         "solution": "Privacy Extensions generieren temporäre IPv6-Adressen"
