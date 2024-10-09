@@ -8,10 +8,22 @@ function Exam({ exam, onSubmit, onSubmitWithAI }) {
   const [error, setError] = useState(null);
 
   const handleAnswerChange = (questionId, answer) => {
-    setAnswers(prevAnswers => ({
-      ...prevAnswers,
-      [questionId]: answer
-    }));
+    setAnswers(prevAnswers => {
+      const currentAnswers = prevAnswers[questionId] || [];
+      if (currentAnswers.includes(answer)) {
+        // If the answer is already selected, remove it
+        return {
+          ...prevAnswers,
+          [questionId]: currentAnswers.filter(a => a !== answer),
+        };
+      } else {
+        // Otherwise, add it to the selected answers
+        return {
+          ...prevAnswers,
+          [questionId]: [...currentAnswers, answer],
+        };
+      }
+    });
   };
 
   const handleSubmit = () => {
@@ -23,18 +35,15 @@ function Exam({ exam, onSubmit, onSubmitWithAI }) {
     setError(null);
     try {
       const reviewPromises = exam.questions.map(async (question) => {
-        const userAnswer = answers[question.id] || '';
-        const isAnswered = userAnswer !== '';
-        const isCorrect = isAnswered && (
-          (question.type === 'multiple-choice' && userAnswer === question.solution) ||
-          (question.type === 'text' && userAnswer.toLowerCase().includes(question.solution.toLowerCase()))
-        );
+        const userAnswers = answers[question.id] || [];
+        const isAnswered = userAnswers.length > 0;
+        const isCorrect = isAnswered && userAnswers.every(answer => question.solution.includes(answer));
 
         let prompt;
         if (!isAnswered) {
-          prompt = `Frage: ${question.text}\nAntwort des Benutzers: Keine Antwort gegeben\nRichtige Antwort: ${question.solution}\n\nDer Benutzer hat keine Antwort gegeben. Geben Sie eine Bewertung von 0/5 und ein kurzes Feedback (maximal 15 Wörter). Antworten Sie auf Deutsch im Format: "Punkte: 0/5\n[Feedback]"`;
+          prompt = `Frage: ${question.text}\nAntwort des Benutzers: Keine Antwort gegeben\nRichtige Antwort: ${question.solution.join(', ')}\n\nDer Benutzer hat keine Antwort gegeben. Geben Sie eine Bewertung von 0/5 und ein kurzes Feedback (maximal 15 Wörter). Antworten Sie auf Deutsch im Format: "Punkte: 0/5\n[Feedback]"`;
         } else {
-          prompt = `Frage: ${question.text}\nAntwort des Benutzers: ${userAnswer}\nRichtige Antwort: ${question.solution}\n\nGeben Sie ein kurzes Feedback (maximal 15 Wörter) und eine Bewertung von 0 bis 5 Punkten. Die Antwort ist ${isCorrect ? 'richtig' : 'falsch'}. Antworten Sie auf Deutsch im Format: "Punkte: [Zahl]/5\n[Feedback]"`;
+          prompt = `Frage: ${question.text}\nAntwort des Benutzers: ${userAnswers.join(', ')}\nRichtige Antwort: ${question.solution.join(', ')}\n\nGeben Sie ein kurzes Feedback (maximal 15 Wörter) und eine Bewertung von 0 bis 5 Punkten. Die Antwort ist ${isCorrect ? 'richtig' : 'falsch'}. Antworten Sie auf Deutsch im Format: "Punkte: [Zahl]/5\n[Feedback]"`;
         }
 
         const response = await fetch('http://localhost:3001/gemini', {
@@ -77,7 +86,7 @@ function Exam({ exam, onSubmit, onSubmitWithAI }) {
         <Question
           key={question.id}
           question={question}
-          answer={answers[question.id] || ''}
+          answer={answers[question.id] || []} // Change to handle multiple answers
           onAnswerChange={handleAnswerChange}
           index={index + 1}
         />

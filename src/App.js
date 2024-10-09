@@ -12,6 +12,9 @@ function App() {
   const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
   const [connectionStatus, setConnectionStatus] = useState('');
   const [aiReviews, setAiReviews] = useState({});
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [feedbackStatus, setFeedbackStatus] = useState('');
 
   const handleSelectExam = (exam) => {
     setSelectedExam(exam);
@@ -62,6 +65,34 @@ function App() {
     setUserAnswers({});
   };
 
+  const handleFeedbackSubmit = async (e) => {
+    e.preventDefault();
+    setFeedbackStatus('Sending...');
+    try {
+      const response = await fetch('http://localhost:3001/send-feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ feedbackText }),
+      });
+      if (response.ok) {
+        setFeedbackStatus('Feedback sent successfully!');
+        setFeedbackText('');
+        setTimeout(() => {
+          setIsFeedbackOpen(false);
+          setFeedbackStatus('');
+        }, 3000);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send feedback');
+      }
+    } catch (error) {
+      console.error('Error sending feedback:', error);
+      setFeedbackStatus('Currently not working. E-Mail: haug.johannes@icloud.com');
+    }
+  };
+
   return (
     <div className={`App ${isHeaderShrunk ? 'shrink' : ''} ${currentView}-view`}>
       <header className={`app-header ${isHeaderShrunk ? 'shrink' : ''}`}>
@@ -91,6 +122,27 @@ function App() {
           />
         )}
       </main>
+      <div className="feedback-container">
+        <button className="feedback-button" onClick={() => setIsFeedbackOpen(!isFeedbackOpen)}>
+          Feedback
+        </button>
+        {isFeedbackOpen && (
+          <div className="feedback-form">
+            <h2>Provide Feedback</h2>
+            <form onSubmit={handleFeedbackSubmit}>
+              <textarea
+                value={feedbackText}
+                onChange={(e) => setFeedbackText(e.target.value)}
+                placeholder="Enter your feedback here..."
+                required
+              />
+              <button type="submit" disabled={feedbackStatus === 'Sending...'}>Submit</button>
+              <button type="button" onClick={() => setIsFeedbackOpen(false)}>Close</button>
+            </form>
+            {feedbackStatus && <p className="feedback-status">{feedbackStatus}</p>}
+          </div>
+        )}
+      </div>
       <footer className="app-footer">
         © {new Date().getFullYear()} eXam. Angaben ohne Gewähr.
       </footer>

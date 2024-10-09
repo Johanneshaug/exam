@@ -552,6 +552,303 @@ const exams = [
         "solution": "Privacy Extensions generieren temporäre IPv6-Adressen"
       },
     ],
+  },
+  {
+    id: 8,
+    title: 'Englisch Vokabeltest',
+    tag: 'BS+',
+    visible: true,
+    questions: [
+      {
+        type: 'text',
+        id: 'q1',
+        text: 'Straßenbahn',
+        solution: 'tram, street car',
+      },
+      {
+        type: 'text',
+        id: 'q2',
+        text: 'Hauptverkehrszeit',
+        solution: 'rush hour',
+      },
+      {
+        type: 'text',
+        id: 'q3',
+        text: 'S-Bahn',
+        solution: 'Suburban train',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q4',
+        text: 'Welche erstaunliche Entdeckung machten Wissenschaftler über die Zusammensetzung des Mondes?',
+        possibleAnswers: [
+          'Er besteht zu 30% aus Käse',
+          'Er enthält große Mengen an Diamanten',
+          'Er hat einen flüssigen Kern aus Quecksilber',
+          'Er besitzt ein eigenes Magnetfeld, stärker als das der Erde'
+        ],
+        solution: 'Er besitzt ein eigenes Magnetfeld, stärker als das der Erde',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q5',
+        text: 'Welche unglaubliche Fähigkeit entwickelten Menschen in einer isolierten Gemeinschaft in den Alpen?',
+        possibleAnswers: [
+          'Sie können im Schlaf lernen',
+          'Sie altern rückwärts ab dem 50. Lebensjahr',
+          'Sie können Gedanken telepathisch übertragen',
+          'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben'
+        ],
+        solution: 'Sie können Temperaturen unter 0°C ohne Hilfsmittel überleben',
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: 'FU-IT SA',
+    tag: 'Virtualisierung',
+    questions: [
+      {
+        type: 'multiple-choice',
+        id: 'q1',
+        text: 'Welche beiden Arten von Virtualisierungen gibt es?',
+        possibleAnswers: [
+          'Betriebssystemvirtualisierung',
+          'Hardwarevirtualisierung',
+          'Netzwerkvirtualisierung',
+          'Datenvirtualisierung'
+        ],
+        solution: ['Betriebssystemvirtualisierung', 'Hardwarevirtualisierung'],
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q2',
+        text: 'Welchen Zweck hat die Betriebssystemvirtualisierung?',
+        possibleAnswers: [
+          'Anwendungen ohne Kenntnisse der Programmierung auf beliebigen Systemen starten zu können',
+          'Hardware-Ressourcen zu sparen',
+          'Die Sicherheit zu erhöhen',
+          'Die Netzwerkgeschwindigkeit zu verbessern'
+        ],
+        solution: ['Anwendungen ohne Kenntnisse der Programmierung auf beliebigen Systemen starten zu können'],
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q3',
+        text: 'Was macht Vagrant?',
+        possibleAnswers: [
+          'Vagrant erstellt und verwaltet virtuelle Entwicklungsumgebungen.',
+          'Vagrant ist ein Virtualisierungs-Tool für Server.',
+          'Vagrant optimiert die Netzwerkgeschwindigkeit.',
+          'Vagrant ist ein Backup-Tool für virtuelle Maschinen.'
+        ],
+        solution: 'Vagrant erstellt und verwaltet virtuelle Entwicklungsumgebungen.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q4',
+        text: 'Was bezeichnet der Begriff Virtualisierung?',
+        possibleAnswers: [
+          'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
+          'Die Erhöhung der Hardware-Leistung.',
+          'Die Reduzierung des Stromverbrauchs.',
+          'Die Verbesserung der Datensicherheit.'
+        ],
+        solution: 'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q5',
+        text: 'Was sind 3 Vorteile der Virtualisierung über Server?',
+        possibleAnswers: [
+          'Verbesserte Prozessor-Auslastung der Server',
+          'Effektive Aufteilung von Speichermedien',
+          'Geringerer Stromverbrauch für Betrieb und Kühlung',
+          'Erhöhte Hardwarekosten'
+        ],
+        solution: ['Verbesserte Prozessor-Auslastung der Server', 'Effektive Aufteilung von Speichermedien', 'Geringerer Stromverbrauch für Betrieb und Kühlung'],
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q6',
+        text: 'Was macht der Host?',
+        possibleAnswers: [
+          'Er ist der Rechner, auf dem die virtuellen Maschinen laufen.',
+          'Er ist der Rechner, der die virtuellen Maschinen verwaltet.',
+          'Er ist der Rechner, der die virtuellen Maschinen erstellt.',
+          'Er ist der Rechner, der die virtuellen Maschinen sichert.'
+        ],
+        solution: 'Er ist der Rechner, auf dem die virtuellen Maschinen laufen.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q7',
+        text: 'Was macht der Guest?',
+        possibleAnswers: [
+          'Ist eine lauffähige/laufende virtuelle Maschine.',
+          'Ist die Software, die die virtuelle Maschine erstellt.',
+          'Ist der Benutzer, der die virtuelle Maschine steuert.',
+          'Ist ein Netzwerkgerät, das die virtuelle Maschine unterstützt.'
+        ],
+        solution: 'Ist eine lauffähige/laufende virtuelle Maschine.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q8',
+        text: 'Was ist die Virtual Machine Monitor?',
+        possibleAnswers: [
+          'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
+          'Ein Hardwaregerät zur Verbesserung der Netzwerkgeschwindigkeit.',
+          'Ein Backup-Tool für virtuelle Maschinen.',
+          'Eine Software zur Überwachung der Hardware-Ressourcen.'
+        ],
+        solution: 'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q9',
+        text: 'Welche Virtualisierungsarten gibt es und was machen diese?',
+        possibleAnswers: [
+          'Voll-Virtualisierung: Jedem Gastbetriebssystem steht ein eigener virtueller Rechner mit virtuellen Ressourcen zur Verfügung.',
+          'Para-Virtualisierung: Dem Gastbetriebssystem stehen direkte low-level virtualisierte Hardware-Ressourcen zur Verfügung.',
+          'Bare-Metal: Hypervisor läuft direkt auf der verfügbaren Hardware.',
+          'Host: VMM wird als Anwendung auf Host-Betriebssystem gestartet.'
+        ],
+        solution: 'Voll-Virtualisierung: Jedem Gastbetriebssystem steht ein eigener virtueller Rechner mit virtuellen Ressourcen zur Verfügung.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q10',
+        text: 'Was macht die Baremetal-Virtualisierung?',
+        possibleAnswers: [
+          'Hypervisor läuft direkt auf der verfügbaren Hardware.',
+          'Hypervisor nutzt Treiber eines Host-Betriebssystems.',
+          'Hypervisor ist eine Software, die auf einem virtuellen Server läuft.',
+          'Hypervisor ist ein Netzwerkgerät.'
+        ],
+        solution: 'Hypervisor läuft direkt auf der verfügbaren Hardware.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q11',
+        text: 'Was macht die Host-Virtualisierung?',
+        possibleAnswers: [
+          'VMM wird als Anwendung auf Host-Betriebssystem gestartet.',
+          'Geringere Skalierbarkeit wegen Abhängigkeit zum Host-Betriebssystem.',
+          'Größerer Overhead als Bare-Metal.',
+          'Erfordert keine Hardware-Ressourcen.'
+        ],
+        solution: 'VMM wird als Anwendung auf Host-Betriebssystem gestartet.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q12',
+        text: 'Was ist Memory Balloning?',
+        possibleAnswers: [
+          'Sorgt dafür, dass der Hauptspeicher dynamisch vergrößert wird.',
+          'Reduziert die CPU-Auslastung.',
+          'Erhöht die Netzwerkgeschwindigkeit.',
+          'Verringert den Stromverbrauch.'
+        ],
+        solution: 'Sorgt dafür, dass der Hauptspeicher dynamisch vergrößert wird.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q13',
+        text: 'Was ist die Live Migration?',
+        possibleAnswers: [
+          'Eine Virtuelle Maschine wird ohne Unterbrechung von einem physischen Server auf einen anderen übertragen.',
+          'Eine virtuelle Maschine wird heruntergefahren und dann auf einen anderen Server übertragen.',
+          'Eine virtuelle Maschine wird in den Ruhezustand versetzt.',
+          'Eine virtuelle Maschine wird gelöscht und neu erstellt.'
+        ],
+        solution: 'Eine Virtuelle Maschine wird ohne Unterbrechung von einem physischen Server auf einen anderen übertragen.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q14',
+        text: 'Was ist ein Hypervisor?',
+        possibleAnswers: [
+          'Eine Software oder Hardware, die es ermöglicht, mehrere virtuelle Maschinen gleichzeitig auf einem physischen Host-System auszuführen.',
+          'Ein Netzwerkgerät zur Verbesserung der Sicherheit.',
+          'Ein Backup-Tool für virtuelle Maschinen.',
+          'Eine Software zur Überwachung von Hardware-Ressourcen.'
+        ],
+        solution: 'Eine Software oder Hardware, die es ermöglicht, mehrere virtuelle Maschinen gleichzeitig auf einem physischen Host-System auszuführen.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q15',
+        text: 'Wie werden Container isoliert?',
+        possibleAnswers: [
+          'Isolation des Prozesses durch Kernel Namespaces.',
+          'Durch Hardware-Trennung.',
+          'Durch Netzwerk-Trennung.',
+          'Durch Software-Trennung.'
+        ],
+        solution: 'Isolation des Prozesses durch Kernel Namespaces.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q16',
+        text: 'Welche Auswirkungen hat eine Betriebssystemvirtualisierung auf das System?',
+        possibleAnswers: [
+          'Zusätzliche Belastung, die kaum messbar ist.',
+          'Erhöht die Hardwarekosten.',
+          'Verringert die Sicherheit.',
+          'Erhöht die Komplexität des Systems.'
+        ],
+        solution: 'Zusätzliche Belastung, die kaum messbar ist.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q17',
+        text: 'Was ist der Unterschied zwischen Hardware- und Betriebssystemvirtualisierung?',
+        possibleAnswers: [
+          'Hardwarevirtualisierung benötigt Hardwareunterstützung, Betriebssystemvirtualisierung ist eine reine Softwarelösung.',
+          'Betriebssystemvirtualisierung ist schneller.',
+          'Hardwarevirtualisierung ist sicherer.',
+          'Betriebssystemvirtualisierung benötigt mehr Ressourcen.'
+        ],
+        solution: 'Hardwarevirtualisierung benötigt Hardwareunterstützung, Betriebssystemvirtualisierung ist eine reine Softwarelösung.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q18',
+        text: 'Was macht die Dockerfile?',
+        possibleAnswers: [
+          'Beschreibt das Image, aus dem die Container erzeugt werden.',
+          'Erstellt virtuelle Maschinen.',
+          'Optimiert die Netzwerkgeschwindigkeit.',
+          'Sichert Daten in der Cloud.'
+        ],
+        solution: 'Beschreibt das Image, aus dem die Container erzeugt werden.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q19',
+        text: 'Was wird dabei automatisiert?',
+        possibleAnswers: [
+          'Konfiguration des Images und der daraus resultierenden Container.',
+          'Die Erstellung von Hardware-Ressourcen.',
+          'Die Überwachung von Netzwerkverbindungen.',
+          'Die Sicherung von Daten.'
+        ],
+        solution: 'Konfiguration des Images und der daraus resultierenden Container.',
+      },
+      {
+        type: 'multiple-choice',
+        id: 'q20',
+        text: 'Kann ein Image auch so erzeugt werden?',
+        possibleAnswers: [
+          'Ja.',
+          'Nein.',
+          'Nur mit speziellen Tools.',
+          'Nur in der Cloud.'
+        ],
+        solution: 'Ja.',
+      },
+    ],
   }
 ];
 
