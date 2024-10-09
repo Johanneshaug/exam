@@ -605,8 +605,8 @@ const exams = [
   },
   {
     id: 9,
-    title: 'FU-IT SA',
-    tag: 'Virtualisierung',
+    title: 'Schulaufgabe',
+    tag: 'FU-IT',
     questions: [
       {
         type: 'multiple-choice',
