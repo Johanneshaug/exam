@@ -613,10 +613,10 @@ const exams = [
         id: 'q1',
         text: 'Welche beiden Arten von Virtualisierungen gibt es?',
         possibleAnswers: [
-          'Betriebssystemvirtualisierung',
-          'Hardwarevirtualisierung',
           'Netzwerkvirtualisierung',
-          'Datenvirtualisierung'
+          'Betriebssystemvirtualisierung',
+          'Datenvirtualisierung',
+          'Hardwarevirtualisierung'
         ],
         solution: ['Betriebssystemvirtualisierung', 'Hardwarevirtualisierung'],
       },
@@ -625,9 +625,9 @@ const exams = [
         id: 'q2',
         text: 'Welchen Zweck hat die Betriebssystemvirtualisierung?',
         possibleAnswers: [
+          'Die Sicherheit zu erhöhen',
           'Anwendungen ohne Kenntnisse der Programmierung auf beliebigen Systemen starten zu können',
           'Hardware-Ressourcen zu sparen',
-          'Die Sicherheit zu erhöhen',
           'Die Netzwerkgeschwindigkeit zu verbessern'
         ],
         solution: ['Anwendungen ohne Kenntnisse der Programmierung auf beliebigen Systemen starten zu können'],
@@ -637,10 +637,10 @@ const exams = [
         id: 'q3',
         text: 'Was macht Vagrant?',
         possibleAnswers: [
-          'Vagrant erstellt und verwaltet virtuelle Entwicklungsumgebungen.',
-          'Vagrant ist ein Virtualisierungs-Tool für Server.',
           'Vagrant optimiert die Netzwerkgeschwindigkeit.',
-          'Vagrant ist ein Backup-Tool für virtuelle Maschinen.'
+          'Vagrant erstellt und verwaltet virtuelle Entwicklungsumgebungen.',
+          'Vagrant ist ein Backup-Tool für virtuelle Maschinen.',
+          'Vagrant ist ein Virtualisierungs-Tool für Server.'
         ],
         solution: 'Vagrant erstellt und verwaltet virtuelle Entwicklungsumgebungen.',
       },
@@ -649,10 +649,10 @@ const exams = [
         id: 'q4',
         text: 'Was bezeichnet der Begriff Virtualisierung?',
         possibleAnswers: [
+          'Die Verbesserung der Datensicherheit.',
           'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
           'Die Erhöhung der Hardware-Leistung.',
-          'Die Reduzierung des Stromverbrauchs.',
-          'Die Verbesserung der Datensicherheit.'
+          'Die Reduzierung des Stromverbrauchs.'
         ],
         solution: 'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
       },
@@ -661,10 +661,10 @@ const exams = [
         id: 'q5',
         text: 'Was sind 3 Vorteile der Virtualisierung über Server?',
         possibleAnswers: [
-          'Verbesserte Prozessor-Auslastung der Server',
-          'Effektive Aufteilung von Speichermedien',
           'Geringerer Stromverbrauch für Betrieb und Kühlung',
-          'Erhöhte Hardwarekosten'
+          'Erhöhte Hardwarekosten',
+          'Effektive Aufteilung von Speichermedien',
+          'Verbesserte Prozessor-Auslastung der Server'
         ],
         solution: ['Verbesserte Prozessor-Auslastung der Server', 'Effektive Aufteilung von Speichermedien', 'Geringerer Stromverbrauch für Betrieb und Kühlung'],
       },
@@ -673,8 +673,8 @@ const exams = [
         id: 'q6',
         text: 'Was macht der Host?',
         possibleAnswers: [
-          'Er ist der Rechner, auf dem die virtuellen Maschinen laufen.',
           'Er ist der Rechner, der die virtuellen Maschinen verwaltet.',
+          'Er ist der Rechner, auf dem die virtuellen Maschinen laufen.',
           'Er ist der Rechner, der die virtuellen Maschinen erstellt.',
           'Er ist der Rechner, der die virtuellen Maschinen sichert.'
         ],
@@ -685,9 +685,9 @@ const exams = [
         id: 'q7',
         text: 'Was macht der Guest?',
         possibleAnswers: [
-          'Ist eine lauffähige/laufende virtuelle Maschine.',
-          'Ist die Software, die die virtuelle Maschine erstellt.',
           'Ist der Benutzer, der die virtuelle Maschine steuert.',
+          'Ist die Software, die die virtuelle Maschine erstellt.',
+          'Ist eine lauffähige/laufende virtuelle Maschine.',
           'Ist ein Netzwerkgerät, das die virtuelle Maschine unterstützt.'
         ],
         solution: 'Ist eine lauffähige/laufende virtuelle Maschine.',
@@ -697,10 +697,10 @@ const exams = [
         id: 'q8',
         text: 'Was ist die Virtual Machine Monitor?',
         possibleAnswers: [
-          'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
-          'Ein Hardwaregerät zur Verbesserung der Netzwerkgeschwindigkeit.',
           'Ein Backup-Tool für virtuelle Maschinen.',
-          'Eine Software zur Überwachung der Hardware-Ressourcen.'
+          'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
+          'Eine Software zur Überwachung der Hardware-Ressourcen.',
+          'Ein Hardwaregerät zur Verbesserung der Netzwerkgeschwindigkeit.'
         ],
         solution: 'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
       },
@@ -709,10 +709,10 @@ const exams = [
         id: 'q9',
         text: 'Welche Virtualisierungsarten gibt es und was machen diese?',
         possibleAnswers: [
-          'Voll-Virtualisierung: Jedem Gastbetriebssystem steht ein eigener virtueller Rechner mit virtuellen Ressourcen zur Verfügung.',
-          'Para-Virtualisierung: Dem Gastbetriebssystem stehen direkte low-level virtualisierte Hardware-Ressourcen zur Verfügung.',
           'Bare-Metal: Hypervisor läuft direkt auf der verfügbaren Hardware.',
-          'Host: VMM wird als Anwendung auf Host-Betriebssystem gestartet.'
+          'Host: VMM wird als Anwendung auf Host-Betriebssystem gestartet.',
+          'Voll-Virtualisierung: Jedem Gastbetriebssystem steht ein eigener virtueller Rechner mit virtuellen Ressourcen zur Verfügung.',
+          'Para-Virtualisierung: Dem Gastbetriebssystem stehen direkte low-level virtualisierte Hardware-Ressourcen zur Verfügung.'
         ],
         solution: 'Voll-Virtualisierung: Jedem Gastbetriebssystem steht ein eigener virtueller Rechner mit virtuellen Ressourcen zur Verfügung.',
       },
@@ -721,9 +721,9 @@ const exams = [
         id: 'q10',
         text: 'Was macht die Baremetal-Virtualisierung?',
         possibleAnswers: [
+          'Hypervisor ist eine Software, die auf einem virtuellen Server läuft.',
           'Hypervisor läuft direkt auf der verfügbaren Hardware.',
           'Hypervisor nutzt Treiber eines Host-Betriebssystems.',
-          'Hypervisor ist eine Software, die auf einem virtuellen Server läuft.',
           'Hypervisor ist ein Netzwerkgerät.'
         ],
         solution: 'Hypervisor läuft direkt auf der verfügbaren Hardware.',
@@ -733,10 +733,10 @@ const exams = [
         id: 'q11',
         text: 'Was macht die Host-Virtualisierung?',
         possibleAnswers: [
+          'Erfordert keine Hardware-Ressourcen.',
           'VMM wird als Anwendung auf Host-Betriebssystem gestartet.',
           'Geringere Skalierbarkeit wegen Abhängigkeit zum Host-Betriebssystem.',
-          'Größerer Overhead als Bare-Metal.',
-          'Erfordert keine Hardware-Ressourcen.'
+          'Größerer Overhead als Bare-Metal.'
         ],
         solution: 'VMM wird als Anwendung auf Host-Betriebssystem gestartet.',
       },
