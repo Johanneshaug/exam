@@ -557,7 +557,7 @@ const exams = [
     id: 8,
     title: 'Englisch Vokabeltest',
     tag: 'BS+',
-    visible: true,
+    visible: false,
     questions: [
       {
         type: 'text',
