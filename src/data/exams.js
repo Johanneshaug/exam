@@ -607,6 +607,7 @@ const exams = [
     id: 9,
     title: 'Schulaufgabe',
     tag: 'FU-IT',
+    type: 'Multiplechoice',
     questions: [
       {
         type: 'multiple-choice',
@@ -649,10 +650,10 @@ const exams = [
         id: 'q4',
         text: 'Was bezeichnet der Begriff Virtualisierung?',
         possibleAnswers: [
-          'Die Verbesserung der Datensicherheit.',
+          'Die Verbesserung der Datensicherheit durch die Trennung von Anwendungen in isolierte Umgebungen.',
           'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
-          'Die Erhöhung der Hardware-Leistung.',
-          'Die Reduzierung des Stromverbrauchs.'
+          'Die Erhöhung der Hardware-Leistung durch die Nutzung von Virtualisierungstechniken.',
+          'Die Schaffung einer abstrahierten Umgebung, die mehrere Betriebssysteme auf einer physischen Hardware ermöglicht.'
         ],
         solution: 'Die Nachbildung eines Hard- oder Software-Objekts durch ein ähnliches Objekt vom selben Typ mit Hilfe einer Abstraktionsschicht.',
       },
@@ -662,7 +663,7 @@ const exams = [
         text: 'Was sind 3 Vorteile der Virtualisierung über Server?',
         possibleAnswers: [
           'Geringerer Stromverbrauch für Betrieb und Kühlung',
-          'Erhöhte Hardwarekosten',
+          'Erhöhte Flexibilität bei der Hardwareauswahl',
           'Effektive Aufteilung von Speichermedien',
           'Verbesserte Prozessor-Auslastung der Server'
         ],
@@ -697,9 +698,9 @@ const exams = [
         id: 'q8',
         text: 'Was ist die Virtual Machine Monitor?',
         possibleAnswers: [
-          'Ein Backup-Tool für virtuelle Maschinen.',
-          'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
           'Eine Software zur Überwachung der Hardware-Ressourcen.',
+          'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
+          'Ein Backup-Tool für virtuelle Maschinen.',
           'Ein Hardwaregerät zur Verbesserung der Netzwerkgeschwindigkeit.'
         ],
         solution: 'Steuerungssoftware für Verwaltung von Guests und Host-Ressourcen.',
